@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>隨機問題</title>
-    <script>
-        var questions = [
-            { q: '川芎茶調散', a: '川芎、薄荷、荊芥、白芷、羌活、細辛、防風、炙甘草、清茶' },
-            { q: '大秦艽湯', a: '秦艽、羌活、獨活、防風、白芷、細辛、當歸、白芍、熟地、川芎、白朮、茯苓、生地、石膏、黃芩、甘草' },
-            { q: '消風散', a: '荊芥、防風、牛蒡子、蟬蛻、蒼朮、苦參、木通、石膏、知母、當歸、生地、胡麻仁、甘草' },
-            { q: '四物', a: '熟地、當歸、⽩芍、川芎' },
-            { q: '小活絡丹', a: '炮川烏、炮草烏、炮天南星、地龍、乳香、沒藥、酒' },
-            { q: '牽正散', a: '白附子、全蠍、白殭蠶、熱酒' },
-            { q: '玉真散', a: '白附子、天南星、羌活、防風、白芷、天麻、熱酒或童便' }
-
-        ];
-        var currentQuestion;
-
-        function getRandomQuestion() {
-            var index = Math.floor(Math.random() * questions.length);
-            currentQuestion = questions[index];
-            document.getElementById('question').innerText = currentQuestion.q;
-        }
-
-        function checkAnswer() {
-            var answer = document.getElementById('answer').value;
-            if (answer === currentQuestion.a) {
-                document.getElementById('result').innerText = '回答正確';
-                getRandomQuestion();
-            } else {
-                document.getElementById('result').innerText = '回答錯誤';
-            }
-        }
-
-        window.onload = getRandomQuestion;
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="logo2.ico" rel="shortcut icon"/>
+    <title>方劑背誦模擬考程式</title>
+    <link rel="stylesheet" type="text/css" href="styles copy.css">
 </head>
 <body>
+
+    <img src="_ff76a239-b32f-48c5-8a76-653fe896fd00.png" style="display:block; margin:0; align-items: center;" />
+
     <h1 id="question"></h1>
-    <input type="text" id="answer">
-    <button onclick="checkAnswer()">提交答案</button>
-    <p id="result"></p>
+    <div id="answer-inputs"></div>
+    <button onclick="submitAnswers()">提交答案</button>
+    <div id="response"></div>
+
+
+
+    <script src="quiz.js"></script>
 </body>
 </html>

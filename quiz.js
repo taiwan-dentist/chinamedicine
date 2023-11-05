@@ -43,7 +43,7 @@ var questions = [
     { question: "大補陰丸", answers: ["熟地黃", "龜板", "黃柏", "知母", "豬脊髓", "練蜜"] },
     { question: "虎潛丸", answers: ["黃柏", "龜板", "知母", "熟地黃", "陳皮", "白芍", "鎖陽", "虎骨", "乾薑"] },
     { question: "一貫煎", answers: ["生地黃", "北沙參", "麥冬", "當歸身", "枸杞子", "川楝子"] },
-    { question: "百合固金湯", answers: ["生地", "熟地", "百合", "麥冬", "玄參", "貝母", "桔梗", "當歸身"] },
+    { question: "百合固金湯", answers: ["生地", "熟地", "百合", "麥冬", "玄參", "貝母", "桔梗", "當歸身", "白芍"] },
     { question: "補肺阿膠湯", answers: ["阿膠", "馬兜鈴", "杏仁", "黍粘子", "炙甘草", "糯米"] },
     { question: "二至丸", answers: ["女貞子", "旱蓮草"] },
     { question: "益胃湯", answers: ["生地", "麥冬", "沙參", "玉竹", "冰糖"] },
@@ -79,14 +79,23 @@ function submitAnswers() {
     for (var i = 0; i < currentQuestion.answers.length; i++) {
         userAnswers.push(document.getElementById('answer' + i).value);
     }
-    userAnswers.sort();
-    var correctAnswers = currentQuestion.answers.slice().sort();
-    if (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers)) {
+    var correctAnswers = currentQuestion.answers.slice();
+    for (var i = 0; i < currentQuestion.answers.length; i++) {
+        var inputElement = document.getElementById('answer' + i);
+        if (correctAnswers.includes(userAnswers[i])) {
+            inputElement.style.backgroundColor = "white";
+            correctAnswers.splice(correctAnswers.indexOf(userAnswers[i]), 1);
+        } else {
+            inputElement.style.backgroundColor = "#feff9c";
+            inputElement.style.borderWidth = "2px";
+        }
+    }
+    if (correctAnswers.length === 0) {
         document.getElementById('response').innerText = "回答正確";
         setTimeout(loadQuestion, 2000);
     } else {
-        document.getElementById('response').innerText = "回答錯誤，正確答案應該是" + correctAnswers.join(",");
-        setTimeout(loadQuestion, 30000);
+        document.getElementById('response').innerText = "回答錯誤，正確答案應該是" + currentQuestion.answers.join(",");
+        setTimeout(loadQuestion, 40000);
     }
 }
 

@@ -78,6 +78,6 @@ button {
 }
 
 button:active {
-    box-shadow: 0px 0px 15px rgb(212,212,212);
+    box-shadow: 0px 0px 10px rgb(212,212,212);
 
 }

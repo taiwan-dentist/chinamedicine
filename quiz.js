@@ -71,6 +71,7 @@ function loadQuestion() {
         answerInputs += '<input type="text" id="answer' + i + '"><br>';
     }
     document.getElementById('answer-inputs').innerHTML = answerInputs;
+    document.getElementById('response').innerText = '';  // 新增的程式碼
 }
 
 function submitAnswers() {

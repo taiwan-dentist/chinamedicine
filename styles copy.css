@@ -32,6 +32,8 @@ h1 {
 }
 
 input[type="text"] {
+    font-family: 'Noto Serif TC', serif;
+    color: #2f3842;
     margin-bottom: 10px;
     border-radius: 1000px !important;
     width: 80%;

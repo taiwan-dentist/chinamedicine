@@ -61,8 +61,12 @@ var questions = [
 
 ];
 var currentQuestion = null;
+var timeoutId = null;
 
 function loadQuestion() {
+    if (timeoutId !== null) {
+        clearTimeout(timeoutId);
+    }
     currentQuestion = questions[Math.floor(Math.random() * questions.length)];
     document.getElementById('question').innerText = currentQuestion.question;
     var answerInputs = '';
@@ -70,7 +74,7 @@ function loadQuestion() {
         answerInputs += '<input type="text" id="answer' + i + '"><br>';
     }
     document.getElementById('answer-inputs').innerHTML = answerInputs;
-    document.getElementById('response').innerText = '';  // 新增的程式碼
+    document.getElementById('response').innerText = '';
 }
 
 function submitAnswers() {
@@ -91,10 +95,10 @@ function submitAnswers() {
     }
     if (correctAnswers.length === 0) {
         document.getElementById('response').innerText = "回答正確";
-        setTimeout(loadQuestion, 2000);
+        timeoutId = setTimeout(loadQuestion, 2000);
     } else {
         document.getElementById('response').innerText = "回答錯誤，正確答案應該是" + currentQuestion.answers.join(",");
-        setTimeout(loadQuestion, 40000);
+        timeoutId = setTimeout(loadQuestion, 40000);
     }
 }
 

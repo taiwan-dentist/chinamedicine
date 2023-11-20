@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="logo2.ico" rel="shortcut icon"/>
-    <title>方劑背誦模擬考程式</title>
-    <link rel="stylesheet" type="text/css" href="styles copy.css">
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="logo3.ico" rel="shortcut icon"/>
+        <title>方劑背誦模擬考程式</title>
+        <link rel="stylesheet" type="text/css" href="stylestest.css">
+    </head>
 <body>
 
-    <img src="d00.jpg" style="display:block; margin:0; align-items: center;" />
-    <h2>現在考題範圍：小考</h2>
+    <div id="cookie"><img src="back.png" alt="cookie"></div>
+    <h2>現在考題範圍：第二次段考</h2>
     <h1 id="question"></h1>
-    <div id="answer-inputs" style="text-align:center"></div>
-    <button onclick="submitAnswers()">提交答案</button>
-    <div id="response"></div>
 
+    <div id="app">
+        <div id="choices"></div>
+    </div>
 
+    <div id="arrange">
+        <button id="next">換題目</button>
+        <button id="submit">提交答案</button>
+    </div>
 
-    <script src="smalltest.js"></script>
+    <p id="feedback"></p>
+
+    <script src="script2exam.js"></script>
+    <script src="snowstorm-min.js"></script>
 </body>
 </html>

@@ -25,6 +25,13 @@ img{
     width: 100%;
 }
 
+#remind{
+    color:#fff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: calc(5px + 2vmin);
+}
+
 h1 {
     font-size: calc(10vmin);
     text-align: center;
@@ -42,7 +49,7 @@ h2 {
     margin-right:50px;
     margin-left:50px;
     margin-bottom: 2px ;
-    margin-top:2px
+    margin-top:5px
 }
 
 #choices{

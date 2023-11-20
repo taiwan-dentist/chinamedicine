@@ -25,15 +25,9 @@ img{
     width: 100%;
 }
 
-#remind{
-    color:#fff;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-size: calc(5px + 2vmin);
-}
 
 h1 {
-    font-size: calc(10vmin);
+    font-size: calc(9vmin);
     text-align: center;
     color: #fff;
     margin-right:50px;
@@ -42,14 +36,27 @@ h1 {
     margin-top:2px;
     margin-bottom: 2vmin;
 }
-h2 {
+
+#examrange {
     font-size: calc(5px + 2vmin);
     text-align: center;
     color: #fff;
     margin-right:50px;
     margin-left:50px;
     margin-bottom: 2px ;
-    margin-top:5px
+    margin-top:10px;
+    letter-spacing:1px;
+}
+
+#remind {
+    font-size: calc(5px + 2vmin);
+    text-align: center;
+    color: #fff;
+    margin-right:50px;
+    margin-left:50px;
+    margin-bottom: 2px ;
+    margin-top:1px;
+    letter-spacing:1px;
 }
 
 #choices{

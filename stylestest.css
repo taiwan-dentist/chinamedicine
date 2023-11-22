@@ -169,6 +169,7 @@ input[type="text"]:hover {
     font-size: calc(10px + 2vmin);
     padding-left: 15%;
     padding-right: 15%;
+    font-weight: 800;
 }
 
 #boxline{
